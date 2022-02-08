@@ -28,7 +28,7 @@ const App = () => {
       console.log(error.message);
       setLoading(false);
     }
-  }, []);
+  }, [loading]);
   if (!loading) {
     return (
       <div className="p-4 h-screen">
