@@ -31,24 +31,24 @@ const App = () => {
   }, [loading]);
   if (!loading) {
     return (
-      <div className="p-4 h-screen">
+      <div className="p-4  bg-purple-900 h-screen">
         <div className="h-1/6 grid gap-6 grid-cols-2 items-stretch">
           <div className="p-4   flex flex-col justify-between rounded-xl shadow-md bg-white">
             <div className="font-medium"> Temperature</div>
-            <div> {temp} °C</div>
+            <div><i className="fas fa-thermometer-three-quarters"></i> {temp} °C</div>
           </div>
           <div className="p-4 flex flex-col justify-between rounded-xl shadow-md bg-white">
-            <div className="font-medium">Location</div>
-            <div>Minna, Nigeria</div>
+            <div className="font-medium">Location(<small>Last Seen</small>)</div>
+            <div><i className="fas fa-map-marker-alt"></i> Minna, Nigeria</div>
           </div>
         </div>
-        <div className="map h-5/6 mt-5 text-white rounded-xl">
+        <div className="map h-5/6 pb-5 mt-5 text-white rounded-xl">
           <AgentMap location={location} />
         </div>
       </div>
     );
   } else {
-    return <div className="text-white">loading... </div>;
+    return <div className="loading"> <div className="animate-spin rounded-2xl h-20 w-20 bg-purple-900"></div> </div>;
   }
 };
 
